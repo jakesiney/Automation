@@ -4,7 +4,7 @@
 IMAGE="<aws_account_id>.dkr.ecr.<region>.amazonaws.com/<your-repo>:latest"
 REGION="<region>"  # e.g., eu-west-1
 AWS_ACCOUNT_ID="<aws_account_id>"  # e.g., 123456789012
-NGINX_CONFIG="/etc/nginx/sites-enabled/jenkins.synergy.tech.conf" # Update if your config is elsewhere
+NGINX_CONFIG="/etc/nginx/sites-enabled/config.conf" # Update if your config is elsewhere
 CONTAINER_NAME_PREFIX="synergy-integrator"
 BLUE_PORT=5000
 GREEN_PORT=5002
