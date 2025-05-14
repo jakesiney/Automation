@@ -1,12 +1,9 @@
 !/bin/bash
 
 # NO PORT MAPPING
-# This script is designed to be run in a Docker container.
 # It pulls the latest image from AWS ECR, stops and removes the existing container if it exists,
 # and starts a new container with the latest image.
 # It does not map any ports, as it is assumed that the container will be run in a network
-# where it can communicate with other services directly.
-# This is a simple deployment script for a Docker container.
 # It is assumed that the Docker daemon is running and that the user has permission to run Docker commands.
 # It is also assumed that the AWS CLI is installed and configured with the necessary permissions
 # to access the ECR repository.
