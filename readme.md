@@ -1,4 +1,4 @@
-# Docker Blue-Green Deployment Script
+# Docker Blue-Green Deployment Script for AWS ECR
 
 This script automates the process of deploying a new version of a Docker container using the **blue-green deployment strategy**. It updates the Nginx configuration to switch traffic between the blue and green environments and ensures zero downtime during deployment.
 
@@ -9,7 +9,6 @@ This script automates the process of deploying a new version of a Docker contain
 - **Blue-Green Deployment**: Switches traffic between two environments (blue and green) to ensure seamless updates.
 - **Docker Integration**: Pulls the latest Docker image and runs the container on the appropriate port.
 - **Nginx Configuration Update**: Updates the Nginx `upstream` block to route traffic to the active environment.
-- **Health Check**: Waits for the new container to start before switching traffic.
 - **Rollback Instructions**: Provides manual rollback steps in case of deployment failure.
 
 ---
@@ -24,7 +23,7 @@ This script automates the process of deploying a new version of a Docker contain
 ### Example Nginx Configuration
 
 ```nginx
-upstream synergy_integrator {
+upstream integrator {
     # Blue environment running on port 5000
     # Uncomment this to make Blue active
     server 127.0.0.1:5000;
@@ -39,6 +38,6 @@ server {
     server_name example.com;
 
     location / {
-        proxy_pass http://synergy_integrator;
+        proxy_pass http://integrator;
     }
 }
